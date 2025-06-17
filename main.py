@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import did_analysis
 
 # Replace with your actual FRED API key
-FRED_API_KEY = 'YOUR_FRED_API_KEY'
+FRED_API_KEY = 'FRED_KEY_HERE'
 
 
 def generate_data_and_charts():
@@ -16,19 +16,20 @@ def generate_data_and_charts():
     os.makedirs(figures_dir, exist_ok=True)
 
     # File paths
-    data_file = os.path.join(data_dir, 'unemployment_data.csv')
-    figure_file = os.path.join(figures_dir, 'unemployment_trends.png')
+    data_file = os.path.join(data_dir, 'foodservice_employment.csv')
+    figure_file = os.path.join(figures_dir, 'foodservice_employment_trends.png')
 
     # Load or fetch data
     if not os.path.exists(data_file):
         print("Fetching data from FRED...")
         fred = Fred(api_key=FRED_API_KEY)
 
+        # used to be CAUR, NYUR, TXUR, and UNRATE for total unemployment
+        # now for food sector unemployment, no US
         series_ids = {
-            'California': 'CAUR',
-            'New York': 'NYUR',
-            'Texas': 'TXUR',
-            'United States': 'UNRATE'
+            'California': 'SMU06000007072200001',
+            'New York': 'SMU36000007072200001',
+            'Texas': 'SMU48000007072200001'
         }
 
         data = {}
@@ -55,10 +56,10 @@ def generate_data_and_charts():
     plt.axvline(policy_ca, color='red', linestyle='--', linewidth=1.5, label='CA $20/hr (Apr 2024)')
     plt.axvline(policy_ny, color='blue', linestyle='--', linewidth=1.5, label='NY +$0.50 (Jan 2025)')
     ylim = plt.ylim()
-    plt.text(policy_ca, ylim[1]*0.95, 'CA $20/hr starts', color='red', fontsize=9, ha='left', va='top')
+    plt.text(policy_ca, ylim[1]*0.97, 'CA $20/hr starts', color='red', fontsize=9, ha='left', va='top')
     plt.text(policy_ny, ylim[1]*0.90, 'NY +$0.50 starts', color='blue', fontsize=9, ha='left', va='top')
-    plt.title('Unemployment Rates (2020–2025)')
-    plt.ylabel('Unemployment Rate (%)')
+    plt.title('Food Service Employment (2020–2025)')
+    plt.ylabel('Employment (Thousands)')
     plt.xlabel('Date')
     plt.grid(True)
     plt.legend()
@@ -70,15 +71,15 @@ def generate_data_and_charts():
     # Plot Figure 2 (smoothed and zoomed)
     df_smooth = df.rolling(window=3, center=True).mean()
     df_zoom = df_smooth[(df_smooth.index >= '2023-01-01') & (df_smooth.index <= '2025-06-01')]
-    fig2_path = os.path.join(figures_dir, 'unemployment_policy_window.png')
+    fig2_path = os.path.join(figures_dir, 'foodservice_employment_policy_window.png')
     plt.figure(figsize=(10, 6))
     df_zoom.plot(ax=plt.gca())
     plt.axvline(policy_ca, color='red', linestyle='--', linewidth=1.5, label='CA $20/hr (Apr 2024)')
     plt.axvline(policy_ny, color='blue', linestyle='--', linewidth=1.5, label='NY +$0.50 (Jan 2025)')
     plt.axvspan(policy_ca, pd.to_datetime('2024-12-31'), color='red', alpha=0.1)
     plt.axvspan(policy_ny, pd.to_datetime('2025-06-01'), color='blue', alpha=0.1)
-    plt.title('Unemployment Rate Trends Around Minimum Wage Hikes (2023–2025)')
-    plt.ylabel('Unemployment Rate (%)')
+    plt.title('Food Service Employment Trends Around Minimum Wage Hikes (2023–2025)')
+    plt.ylabel('Employment (Thousands)')
     plt.xlabel('Date')
     plt.grid(True)
     plt.legend()
