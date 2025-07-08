@@ -1,0 +1,27 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:             employment   R-squared:                       0.954
+Model:                            OLS   Adj. R-squared:                  0.953
+Method:                 Least Squares   F-statistic:                     752.2
+Date:                Tue, 08 Jul 2025   Prob (F-statistic):           1.89e-57
+Time:                        13:40:54   Log-Likelihood:                -390.89
+No. Observations:                  82   AIC:                             789.8
+Df Residuals:                      78   BIC:                             799.4
+Df Model:                           3                                         
+Covariance Type:                  HC1                                         
+=======================================================================================
+                          coef    std err          z      P>|z|      [0.025      0.975]
+---------------------------------------------------------------------------------------
+Intercept            1170.0593      6.551    178.615      0.000    1157.220    1182.898
+treated               273.8593      9.208     29.743      0.000     255.813     291.906
+post_policy            39.9693      7.227      5.530      0.000      25.804      54.135
+treated:post_policy   -44.3950     11.197     -3.965      0.000     -66.340     -22.450
+==============================================================================
+Omnibus:                       21.508   Durbin-Watson:                   0.323
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               30.719
+Skew:                          -1.131   Prob(JB):                     2.14e-07
+Kurtosis:                       4.968   Cond. No.                         6.32
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC1)

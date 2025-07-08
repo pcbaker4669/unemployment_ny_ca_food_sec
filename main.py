@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import did_analysis
 
 # Replace with your actual FRED API key
-FRED_API_KEY = 'FRED_KEY_HERE'
+FRED_API_KEY = ''
 
 
 def generate_data_and_charts():
@@ -46,7 +46,7 @@ def generate_data_and_charts():
         df = pd.read_csv(data_file, index_col=0, parse_dates=True)
 
     # Filter for recent years
-    df = df[df.index >= '2020-01-01']
+    df = df[(df.index >= '2020-01-01') & (df.index <= pd.to_datetime('today'))]
 
     # Plot Figure 1
     plt.figure(figsize=(10, 6))
@@ -70,7 +70,7 @@ def generate_data_and_charts():
 
     # Plot Figure 2 (smoothed and zoomed)
     df_smooth = df.rolling(window=3, center=True).mean()
-    df_zoom = df_smooth[(df_smooth.index >= '2023-01-01') & (df_smooth.index <= '2025-06-01')]
+    df_zoom = df_smooth[(df_smooth.index >= '2023-01-01') & (df_smooth.index <= '2025-08-01')]
     fig2_path = os.path.join(figures_dir, 'foodservice_employment_policy_window.png')
     plt.figure(figsize=(10, 6))
     df_zoom.plot(ax=plt.gca())

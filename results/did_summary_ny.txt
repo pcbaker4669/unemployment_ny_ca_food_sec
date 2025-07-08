@@ -2,26 +2,26 @@
 ==============================================================================
 Dep. Variable:             employment   R-squared:                       0.987
 Model:                            OLS   Adj. R-squared:                  0.987
-Method:                 Least Squares   F-statistic:                     1958.
-Date:                Tue, 17 Jun 2025   Prob (F-statistic):           7.71e-72
-Time:                        08:19:59   Log-Likelihood:                -386.19
-No. Observations:                  80   AIC:                             780.4
-Df Residuals:                      76   BIC:                             789.9
+Method:                 Least Squares   F-statistic:                     2639.
+Date:                Tue, 08 Jul 2025   Prob (F-statistic):           2.71e-78
+Time:                        13:40:54   Log-Likelihood:                -395.82
+No. Observations:                  82   AIC:                             799.6
+Df Residuals:                      78   BIC:                             809.3
 Df Model:                           3                                         
-Covariance Type:            nonrobust                                         
+Covariance Type:                  HC1                                         
 =======================================================================================
-                          coef    std err          t      P>|t|      [0.025      0.975]
+                          coef    std err          z      P>|z|      [0.025      0.975]
 ---------------------------------------------------------------------------------------
-Intercept            1180.6250      5.167    228.500      0.000    1170.334    1190.916
-treated              -529.0333      7.307    -72.401      0.000    -543.587    -514.480
-post_policy            18.9000     16.339      1.157      0.251     -13.642      51.442
-treated:post_policy   -21.2667     23.107     -0.920      0.360     -67.288      24.755
+Intercept            1180.6250      5.857    201.583      0.000    1169.146    1192.104
+treated              -529.0333      7.666    -69.007      0.000    -544.059    -514.007
+post_policy            25.2750      9.051      2.793      0.005       7.535      43.015
+treated:post_policy   -20.5067     12.598     -1.628      0.104     -45.198       4.185
 ==============================================================================
-Omnibus:                       16.560   Durbin-Watson:                   0.343
-Prob(Omnibus):                  0.000   Jarque-Bera (JB):               19.126
-Skew:                          -1.083   Prob(JB):                     7.03e-05
-Kurtosis:                       4.025   Cond. No.                         8.82
+Omnibus:                       15.881   Durbin-Watson:                   0.412
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               18.030
+Skew:                          -1.046   Prob(JB):                     0.000122
+Kurtosis:                       3.947   Cond. No.                         8.13
 ==============================================================================
 
 Notes:
-[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[1] Standard Errors are heteroscedasticity robust (HC1)

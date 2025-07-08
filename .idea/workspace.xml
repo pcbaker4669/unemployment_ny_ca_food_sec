@@ -6,8 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="32e765e4-306a-419f-ae01-aad3bfb92557" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/foodservice_employment.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/did_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/did_analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/did_plot_ca_tx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/did_plot_ny_tx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/foodservice_employment_policy_window.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/foodservice_employment_trends.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/did_summary.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/did_summary_ny.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,23 +24,23 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2ydOZbOK9ipnYXAe0DJ1gqzXHsI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="unemployment_ny_ca_food_sec" />
